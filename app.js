@@ -2,16 +2,16 @@
 
 
 // const CompileApiBaseUrl = "http://compi-Publi-168H5W6RSHLVS-1734427507.ap-northeast-1.elb.amazonaws.com/book?tag=Python&limit=20&orderBy=review_average&order=desc";
-const CompileApiBaseUrl = "http://compi-Publi-168H5W6RSHLVS-1734427507.ap-northeast-1.elb.amazonaws.com/book";
+const CompileApiBaseUrl = "https://api.compileapp.net/book";
 // const CompileApiBaseUrl = "http://localhost:8080/book?orderBy=review_average&order=desc";
 
 const TAGS = "python,統計,時系列,機械学習,AWS,GCP,Azure,AI,人工知能,深層学習,ディープラーニング,データクレンジング,データサイエンス,可視化,データ分析,ビッグデータ,Vue,React,Go,IoT,プログラミング,レコメンド"
 
 function buildUrl(tag) {
   if (tag.length > 0){
-    return CompileApiBaseUrl + "?tag=" + tag + "&limit=20&orderBy=review_average&order=desc"
+    return CompileApiBaseUrl + "?tag=" + tag + "&limit=100&orderBy=review_average&order=desc"
   } else{
-    return CompileApiBaseUrl + "?limit=20&orderBy=review_average&order=desc"
+    return CompileApiBaseUrl + "?limit=100&orderBy=review_average&order=desc"
   }
 }
 
