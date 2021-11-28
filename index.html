@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Compile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.1/css/foundation.min.css">
+  </head>
+  <body>
+    <div class="container" id="app">
+        <section class="callout secondary">
+            <h5 class="text-center">Filter by Tag</h5>
+            <form>
+                <div class="row">
+                    <div class="large-6 columns">
+                        <select v-model="tag">
+                            <option v-for="tag in tags" :value="tag">{{ tag }}</option>
+                        </select>
+                    </div>
+                    <div class="medium-6 columns">
+                        <a @click="getBooks(tag)" class="button expanded">Retrieve</a>
+                    </div>
+                </div>
+            </form>
+        </section>
+        <div class="row" v-for="books in processedBooks">
+            <div class="columns large-3 medium-6" v-for="book in books">
+                <div class="card">
+                    <div class="card-divider">
+                        {{ book.title }}
+                    </div>
+                    <a :href="book.medium_iamge_url" target="_blank"><img :src="book.medium_image_url"></a>
+                    <div class="card-section">
+                        <p>{{ book.author }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+     </div>          
+    </div>
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
